@@ -6,7 +6,7 @@ class ProfileUser {
     }
     
     //get data user
-    getDataUser(){
+   async getDataUser(){
     document.getElementById('userName').innerHTML  = this.data.userName;
     document.getElementById('profile_photo').src  = '/assets/img/'+this.data.profile_photo;
     document.getElementById('fullname').innerHTML  = this.data.names+" "+this.data.last_names;
@@ -27,9 +27,9 @@ class ProfileUser {
        div.classList.add("mb-3")
        let div2 = document.createElement('div')
        div2.classList.add("progress-bar")
-       div2.style.width = `${this.data.skills[s].score}%`
+       div2.style.width = `${this.data.skills[s].score.toFixed(2)}%`
        let h4 = document.createElement('h6')
-       h4.innerHTML =`${this.data.skills[s].score}%`
+       h4.innerHTML =`${this.data.skills[s].score.toFixed(2)}%`
        let button = document.createElement('button') 
        button.classList.add("btn")
        button.classList.add("btn-success")
@@ -37,8 +37,8 @@ class ProfileUser {
        button.textContent="cali"
 
        skillList.appendChild(h6)
-       div.appendChild(h4)
-       div.appendChild(div2);
+       div.appendChild(div2)
+       div.appendChild(h4);
        skillList.appendChild(div)
     }
 
@@ -53,7 +53,7 @@ class ProfileUser {
         a.appendChild(document.createTextNode(this.data.socialNetworks[n].newtwork))
         li.appendChild(a);
         listSocial.appendChild(li)
-        console.log('asd')
+     
     }
 
     //get studies
@@ -96,7 +96,27 @@ class ProfileUser {
         li.appendChild(h6)
         li.appendChild(p)
         studieList.appendChild(li)
+    }
+     //get friends
+     let dataSession=  await JSON.parse(sessionStorage.getItem('dataSession'))
+     for(let f in  this.data.friendships){
+        let resulUser = await fetch(`http://localhost:3000/user/${ this.data.friendships[f].id_user_friend}`, {
+            method: 'get',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' +  dataSession.token
+            }})
+        const dataUser = await resulUser.json();
 
+        let listSocial= document.getElementById('friendsList')
+        let li = document.createElement('li')
+        li.classList.add("list-group-item")
+        let a = document.createElement('a')
+        a.setAttribute('href',`http://127.0.0.1:3000/profile?id_user=${dataUser.id_user}`,);
+        a.appendChild(document.createTextNode(dataUser.userName))
+        li.appendChild(a);
+        listSocial.appendChild(li)
     }
 }
 
@@ -205,6 +225,7 @@ class ProfileUser {
             console.log(error)
         }  
     }
+    
 
 }
 

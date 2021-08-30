@@ -26,18 +26,20 @@ class ProfileUser {
        div.classList.add("mb-3")
        let div2 = document.createElement('div')
        div2.classList.add("progress-bar")
-       div2.style.width = `${this.data.skills[s].score}%`
+       div2.style.width = `${this.data.skills[s].score.toFixed(2)}%`
        let h4 = document.createElement('h6')
-       h4.innerHTML =`${this.data.skills[s].score}%`
+       h4.innerHTML =`${this.data.skills[s].score.toFixed(2)}%`
        let button = document.createElement('button') 
        button.classList.add("btn")
        button.classList.add("btn-success")
        button.classList.add("offset-10")
        button.textContent="cali"
+       button.setAttribute("onclick", `setScore('${this.data.skills[s].id_skill}')`);
 
+       skillList.appendChild(button)
        skillList.appendChild(h6)
-       div.appendChild(h4)
-       div.appendChild(div2);
+       div.appendChild(div2)
+       div.appendChild(h4);
        skillList.appendChild(div)
     }
 
@@ -98,6 +100,26 @@ class ProfileUser {
 
     }
 }
+async addScore(id_skill,score){
+    try {
+        let dataSession=  await JSON.parse(sessionStorage.getItem('dataSession'))
+        let resultado = await fetch('http://localhost:3000/skill/score', {
+        method: 'post',
+        headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' +  dataSession.token
+        },
+        body: JSON.stringify({
+            "id_skill":  id_skill,
+            "score" : score,
+        })
+    })
+      if(resultado){alert('score added'); }
+    } catch (error) {
+        console.log(error)
+    } 
+}
 
 }
 
@@ -132,6 +154,11 @@ window.onload = async function (){
     
     let resulProfile = await fetch(`http://localhost:3000/user/${id_user}`, {
         method: 'get',
+        headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + dataSession.token
+          }
     })
     //parse json
     const data = await resulProfile.json();
@@ -190,6 +217,11 @@ addFriend.addEventListener('click', async ()=>{
 	}
 });
 
-
+async function setScore(id_skill){
+    
+    let score = prompt ('enter a score 1-100');
+    userProfile.addScore(id_skill,score)
+    location.reload();
+}
 
 

@@ -300,4 +300,31 @@ module.exports.addFriends = async (user) => {
 		throw new Error('User or id_user_friend  no  exists or is inactive');
 	}
 }
+//update, update score skill -- average
+module.exports.updateScore = async (body) => {
+	try {
+		let Sskill = await Skills.findOne({
+			where: {
+				id_skill: body.id_skill
+			}
+		});
 
+		let Skill = await Skills.update({
+			score: (parseFloat(body.score) + parseFloat(Sskill.score)/(parseFloat(Sskill.totalUserScore)+1) ),
+			totalUserScore: Sskill.totalUserScore +1
+		}, {
+			where: {
+				id_skill: body.id_skill 
+			}
+		});
+       
+		if (Skill != null) {
+			return 'New score added = '+body.score;
+			
+		}
+		throw new Error('User no longer exists or is inactive');
+	} catch (error) {
+        console.log(error)
+		throw error;
+	}
+}

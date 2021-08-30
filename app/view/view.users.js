@@ -136,9 +136,19 @@ app.post('/user/friends',middlewares.validateToken ,/*middlewares.corsOption,*/a
 
 
  //get user for id
- app.get('/user/:id',/*middlewares.corsOption,*/async (req, res) =>{
+ app.get('/user/:id',middlewares.validateToken,/*middlewares.corsOption,*/async (req, res) =>{
     try {
         let user = await controlUsers.retrieveUserId(req.params.id);
+        res.status(200).json(user);
+    } catch (error) {
+        res.status(500).json('error in the request views user or authentication fails')
+    }
+ });
+
+ // update socore skill
+ app.post('/skill/score',middlewares.validateToken ,/*middlewares.corsOption,*/async (req, res) =>{
+    try {
+        let user = await controlUsers.updateScore(req.body);
         res.status(200).json(user);
     } catch (error) {
         res.status(500).json('error in the request views user or authentication fails')

@@ -213,3 +213,13 @@ module.exports.addFriends = async (user) =>{
         throw  Error (error)      
     }
 }
+//update  socore
+module.exports.updateScore = async (user) =>{
+    try {
+        const result = await modelUsers.updateScore(user);
+        return result;
+    } catch (error) {
+        console.log(error)
+        throw  Error (error)      
+    }
+}
