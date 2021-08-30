@@ -5,7 +5,6 @@ const Languages = require('../db/db.languages.model');
 const Skills = require('../db/db.skills.model');
 const Hobbies = require('../db/db.hobbies.model');
 const SocialNetworks = require('../db/db.socialNetworks.model');
-const ScoreHistory = require('../db/db.scoreHistory.model');
 const Pictures = require('../db/db.pictures.model');
 const Friendships = require('../db/db.friendships.model');
 
@@ -52,6 +51,14 @@ const Users = sequelize.define('users',{
 		type: DataTypes.STRING(200),
 		allowNull: false
 	},
+	address: {
+		type: DataTypes.STRING(100),
+		allowNull: false
+	},
+	phone: {
+		type: DataTypes.STRING(20),
+		allowNull: false
+	},
 	active: {
 		type: DataTypes.INTEGER(),
 		allowNull: false
@@ -74,10 +81,6 @@ Users.hasMany(Languages, { foreignKey: 'id_user', constraints: true, onDelete: '
 
 Users.hasMany(Hobbies, { foreignKey: 'id_user', constraints: true, onDelete: 'cascade',onUpdate: 'cascade' })
 
-Users.hasMany(ScoreHistory, { foreignKey: 'id_user', constraints: true, onDelete: 'cascade',onUpdate: 'cascade' })
-
-Users.hasMany(ScoreHistory, { foreignKey: 'id_user_quali', constraints: true, onDelete: 'cascade',onUpdate: 'cascade' })
-
 Users.hasMany(Skills, { foreignKey: 'id_user' })
 
 Users.hasMany(SocialNetworks, { foreignKey: 'id_user', constraints: true, onDelete: 'cascade',onUpdate: 'cascade' })
@@ -85,7 +88,7 @@ Users.hasMany(SocialNetworks, { foreignKey: 'id_user', constraints: true, onDele
 Users.hasMany(Pictures, { foreignKey: 'id_user', constraints: true, onDelete: 'cascade',onUpdate: 'cascade' })
 
 Users.hasMany(Friendships, { foreignKey: 'id_user', constraints: true, onDelete: 'cascade',onUpdate: 'cascade' })
-Users.hasMany(Friendships, { foreignKey: 'id_user_friend', constraints: true, onDelete: 'cascade',onUpdate: 'cascade' })
+
 
 
 module.exports = Users;

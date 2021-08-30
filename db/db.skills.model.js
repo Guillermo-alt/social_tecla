@@ -1,6 +1,5 @@
 const {DataTypes} = require('sequelize');
 const sequelize = require('../db/db.connection');
-const ScoreHistory = require('../db/db.scoreHistory.model');
 
 const Skills = sequelize.define('skills',{
     id_skill:{
@@ -11,12 +10,19 @@ const Skills = sequelize.define('skills',{
 	name: {
 		type: DataTypes.STRING(30),
 		allowNull: false
+	},
+    score: {
+		type: DataTypes.FLOAT(),
+		allowNull: false
+	},
+    totalUserScore: {
+		type: DataTypes.INTEGER(),
+		allowNull: false
 	}
 }, {
 	timestamps: true
 });
 
-Skills.hasMany(ScoreHistory, { foreignKey: 'id_skill', constraints: true, onDelete: 'cascade',onUpdate: 'cascade' })
 
 module.exports = Skills;
 

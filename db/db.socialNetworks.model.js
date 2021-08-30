@@ -8,11 +8,7 @@ const SocialNetworks = sequelize.define('socialNetworks',{
         autoIncrement:true
     },
 	newtwork: {
-		type: DataTypes.STRING(30),
-		allowNull: false
-	},
-    favicon: {
-		type: DataTypes.STRING(30),
+		type: DataTypes.STRING(150),
 		allowNull: false
 	}
 }, {

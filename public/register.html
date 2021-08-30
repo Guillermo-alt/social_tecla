@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="./assets/dist/css/signin.css" rel="stylesheet">
+    <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sign-in/">
+</head>
+<body  class="text-center">
+    <section class=" container h-100 h-custom">
+   
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-8 col-xl-6">
+              <div class="card rounded-3">
+                <img src="./assets/img/imgResources/bannerTecla.png" class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;" alt="Sample photo">
+                <div class="card-body "></div>
+                  <h3 class="mb-4">Registration Info</h3>
+
+                  <form id="formReg" class="row g-3 m-5" accept-charset="UTF-8" action = "http://localhost:3000/users/register/redirect" method="post"> 
+
+                    <div class="col-md-6">
+                      <label class="form-label" >Names</label>
+                      <input type="text" name="names" class="form-control" >
+                    </div> 
+                    <div class="col-md-6">
+                      <label  class="form-label" >Last Names</label>
+                      <input type="text" name="last_names" class="form-control" >
+                    </div>
+                    <div class="col-md-6">
+                        <label  class="form-label" >Email</label>
+                        <input type="email" name="email" class="form-control" >
+                      </div>
+                      <div class="col-md-6">
+                        <label  class="form-label" >User Name</label>
+                        <input type="text" name="userName" class="form-control" >
+                      </div>
+                      <div class="col-md-6">
+                        <label for="inputPassword4" class="form-label">Password</label>
+                        <input type="password" name="password" class="form-control">
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label">Date of birth</label>
+                        <input type="Date" name="date_of_birth" class="form-control">
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label">Phone</label>
+                        <input type="text" name="phone" class="form-control">
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label">Address</label>
+                        <input type="text" name="address" class="form-control">
+                      </div>
+                      <div class="col-12">
+                        <label for="exampleFormControlTextarea1">Abou Me</label>
+                        <textarea class="form-control" name="About_me" rows="3"></textarea>
+                      </div>
+                          <div class="col-12">
+                        <input class="btn btn-success" style="width:150px" type = "submit"value = "Crear">
+                      </div>
+                    </form>
+                </div>
+              </div>
+            </div>
+        </div>
+      </section>
+
+
+ <script src="./assets/js/register.js"></script>
+</body>
+</html>

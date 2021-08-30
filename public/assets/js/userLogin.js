@@ -23,9 +23,8 @@ let Sign_in = document.getElementById('Sign_in')
 //Login
 Sign_in.addEventListener('click', async ()=> {
 
-    var formulario = document.forms['form_sign'];
 
-    usuario.guardaUsuario(new usuario (formulario['email'].value,formulario['pass'].value))
+    usuario.guardaUsuario(new usuario (document.getElementById('email').value,document.getElementById('pass').value))
     
     try {
     

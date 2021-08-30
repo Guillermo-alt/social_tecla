@@ -8,7 +8,7 @@ const Studies = sequelize.define('studies',{
         autoIncrement:true
     },
 	institution: {
-		type: DataTypes.STRING(30),
+		type: DataTypes.STRING(150),
 		allowNull: false
 	},
     period: {

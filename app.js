@@ -11,7 +11,6 @@ const Languages = require('./db/db.languages.model');
 const Skills = require('./db/db.skills.model');
 const Hobbies = require('./db/db.hobbies.model');
 const SocialNetworks = require('./db/db.socialNetworks.model');
-const ScoreHistory = require('./db/db.scoreHistory.model');
 const Pictures = require('./db/db.pictures.model');
 const Friendships = require('./db/db.friendships.model');
 
@@ -40,7 +39,6 @@ async function startServer(){
         await Hobbies.sync({ alter: true }); 
         await SocialNetworks.sync({alter:true}); 
         await Skills.sync({ alter: true }); 
-        await ScoreHistory.sync({alter:true}); 
         await Pictures.sync({alter:true}); 
         await Friendships.sync({alter:true}); 
        
