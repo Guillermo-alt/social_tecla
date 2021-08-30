@@ -4,7 +4,6 @@ class ProfileUser {
         this.data = data
         this.token=token
     }
-    
     //get data user
     getDataUser(){
     document.getElementById('userName').innerHTML  = this.data.userName;
@@ -100,115 +99,10 @@ class ProfileUser {
     }
 }
 
-   
-    async changepassword(){
-
-        let pass1 = document.getElementById('pass1').value;
-        let pass2 = document.getElementById('pass2').value;
-    
-        var noValido = /\s/;
-    
-        if( (!noValido.test(pass1) && !noValido.test(pass2)) && ( pass2 != '' && pass1 != '') &&(pass2===pass1)){
-           try {
-            let resultado = await fetch('http://127.0.0.1:3000/user/pass', {
-            method: 'post',
-            headers: {
-                'Accept': 'application/json, text/plain, */*',
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' +  this.token
-            },
-            body: JSON.stringify({
-                "id_user": this.data.id_user,
-                "password" : pass1,
-            })
-        })
-          if(resultado){sessionStorage.clear();alert('password changed'); location.href ="./"; }
-        } catch (error) {
-            console.log(error)
-        }  
-        }else{
-           alert('password no valido');
-        }    
-    }
-
-    async updatePhotoProfile(){
-        if(document.getElementById('img_profile').value != '0')
-        document.getElementById('formUpload').setAttribute('action', `http://127.0.0.1:3000/upload/photo/${this.data.id_user}`)
-      
-        document.getElementById('formUpload').submit()
-    }
-
-    async updateCoverPage(){
-        if(document.getElementById('cover_page').value != '0')
-        document.getElementById('formUploadcover').setAttribute('action', `http://127.0.0.1:3000/upload/cover/${this.data.id_user}`)
-      
-        document.getElementById('formUploadcover').submit()
-    }
-
-    async addSkill(skill){
-        try {
-            let resultado = await fetch('http://localhost:3000/user/skills', {
-            method: 'post',
-            headers: {
-                'Accept': 'application/json, text/plain, */*',
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' +  this.token
-            },
-            body: JSON.stringify({
-                "nameSkill": skill,
-                "id_user" : this.data.id_user,
-            })
-        })
-          if(resultado){alert('skill added'); location.href ="./"; }
-        } catch (error) {
-            console.log(error)
-        } 
-    }
-
-    async addSocial(newtwork){
-        try {
-            let resultado = await fetch('http://localhost:3000/user/social', {
-            method: 'post',
-            headers: {
-                'Accept': 'application/json, text/plain, */*',
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' +  this.token
-            },
-            body: JSON.stringify({
-                "newtwork": newtwork,
-                "id_user" : this.data.id_user,
-            })
-        })
-          if(resultado){alert('social newtwork added'); location.href ="./"; }
-        } catch (error) {
-            console.log(error)
-        } 
-    }
-
-    async addStudies(studies, period){
-        try {
-            let resultado = await fetch('http://localhost:3000/user/studies', {
-            method: 'post',
-            headers: {
-                'Accept': 'application/json, text/plain, */*',
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' +  this.token
-            },
-            body: JSON.stringify({
-                "institution": studies,
-                "period": period,
-                "id_user" : this.data.id_user,
-            })
-        })
-          if(resultado){alert('studies added'); location.href ="./"; }
-        } catch (error) {
-            console.log(error)
-        }  
-    }
-
 }
 
 //objet ProfileUser global
+var userProfile;
 var user;
 
 
@@ -225,12 +119,28 @@ window.onload = async function (){
             'Authorization': 'Bearer ' + dataSession.token
           }
     })
-    const data = await result.json();
+    const dataUs = await result.json();
     
-    user = new ProfileUser(data,dataSession.token)
-    user.getDataUser()
+    //new profileUser
+    user = new ProfileUser(dataUs,dataSession.token)
 
 
+    //search params url user_id
+    var queryString = window.location.search;
+    var urlParams = new URLSearchParams(queryString);
+    var id_user = urlParams.get('id_user');
+    
+    let resulProfile = await fetch(`http://localhost:3000/user/${id_user}`, {
+        method: 'get',
+    })
+    //parse json
+    const data = await resulProfile.json();
+    
+    //new profileUser
+    userProfile = new ProfileUser(data,dataSession.token)
+    userProfile.getDataUser()
+
+    
     } catch (error) {
        console.log(error)     
     }
@@ -240,7 +150,6 @@ window.onload = async function (){
         console.log(error)   
     } 
 }
-
 
 //close session
 let logout = document.getElementById('logout');
@@ -253,45 +162,34 @@ logout.addEventListener('click', async ()=>{
 	}
 });
 
-//change password
-let changePass = document.getElementById('changePass');
 
-changePass.addEventListener('click', async ()=>{
-    user.changepassword();
+//add friends
+let addFriend = document.getElementById('addFriend');
 
+addFriend.addEventListener('click', async ()=>{
+    var opcion = confirm("want to add friend?");
+    if (opcion == true) {
+        try {
+            let resultado = await fetch('http://localhost:3000/user/friends', {
+            method: 'post',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' +  user.token
+            },
+            body: JSON.stringify({
+                "id_user_friend":  userProfile.data.id_user,
+                "id_user" : user.data.id_user,
+            })
+        })
+          if(resultado){alert('friend added'); }
+        } catch (error) {
+            console.log(error)
+        } 
+      
+	}
 });
 
-
-//upload photo_profile
-document.getElementById('sendFormUplaod').addEventListener('click', (e) => {
-	e.preventDefault()
-    user.updatePhotoProfile()
-  
-  });
-//upload cover
-  document.getElementById('sendFormUplaodcover').addEventListener('click', (e) => {
-	e.preventDefault()
-    user.updateCoverPage()
-  
-  });
-
-  //add Skill
-  document.getElementById('addSkill').addEventListener('click', (e) => {
-    user.addSkill( document.getElementById('skill').value)
-  
-  });
-//add social
-  document.getElementById('addSocial').addEventListener('click', (e) => {
-    user.addSocial( document.getElementById('social').value)
-  
-  });
-
-  //add studies
-  document.getElementById('addStudies').addEventListener('click', (e) => {
-    user.addStudies( document.getElementById('studies').value,document.getElementById('period').value)
-    
-  
-  });
 
 
 

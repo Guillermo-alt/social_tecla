@@ -135,6 +135,15 @@ app.post('/user/friends',middlewares.validateToken ,/*middlewares.corsOption,*/a
  });
 
 
+ //get user for id
+ app.get('/user/:id',/*middlewares.corsOption,*/async (req, res) =>{
+    try {
+        let user = await controlUsers.retrieveUserId(req.params.id);
+        res.status(200).json(user);
+    } catch (error) {
+        res.status(500).json('error in the request views user or authentication fails')
+    }
+ });
 
 
 // endpoints  *******************************   upload files

@@ -63,7 +63,7 @@ module.exports.createUser = async (user) => {
 	}
 }
 
-//create user
+//create user with token
 module.exports.retrieveUser = async (user) => {
 	try {
 		let User = await Users.findOne({include: [
@@ -79,6 +79,33 @@ module.exports.retrieveUser = async (user) => {
                 email:user.email,
                 password:user.password,
                 active: 1
+			}
+		});
+       
+		if (User != null) {
+			return User;
+		}
+		throw new Error('User no longer exists or is inactive');
+	} catch (error) {
+        console.log(error)
+		throw error;
+	}
+};
+
+//create user for id
+module.exports.retrieveUserId = async (id_user) => {
+	try {
+		let User = await Users.findOne({include: [
+            { model: Hobbies, as: 'hobbies'},
+            {model: Skills, as: 'skills'},
+            {model: Studies, as: 'studies'},
+            {model: Languages, as: 'languages'},
+            {model: SocialNetworks, as: 'socialNetworks'},
+            {model: Pictures, as: 'pictures'},
+            {model: Friendships, as: 'friendships'}],
+			where: {
+                id_user:id_user,
+
 			}
 		});
        

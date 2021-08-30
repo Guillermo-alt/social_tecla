@@ -1,4 +1,4 @@
-
+const fetch = require('node-fetch');
 
 
 module.exports = async (app) => {
@@ -11,11 +11,12 @@ module.exports = async (app) => {
         }
      });
 
-     app.get('/teclers/:id_user', async (req, res) =>{ //visualiza datos de perfile solicitado (otros perfiles)
+     app.get('/profile', async (req, res) =>{ //visualiza datos de perfile solicitado (otros perfiles)
         try {
-            // res.render("teclers")
+            let result = await fetch (`http://localhost:3000/user/${req.query.id_user}`,{method: 'get'})
+            res.render("profile")
         } catch (error) {
-            res.status(500).json('error in the request rutes social_tecla')
+            res.status(500).json(error+'error in the request rutes social_tecla')
         }
      });
 

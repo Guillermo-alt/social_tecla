@@ -47,7 +47,7 @@ module.exports.createUser = async (user) => {
     }
 };
 
-//get user data
+//get user data with token
 module.exports.retrieveUser = async (user) =>{
     try {
         const result = await modelUsers.retrieveUser(user);
@@ -57,6 +57,18 @@ module.exports.retrieveUser = async (user) =>{
         throw  Error (error)      
     }
 }
+
+//get user for id
+module.exports.retrieveUserId = async (id) =>{
+    try {
+        const result = await modelUsers.retrieveUserId(id);
+        return result;
+    } catch (error) {
+        console.log(error)
+        throw  Error (error)      
+    }
+}
+
 //verify user token
 module.exports.verifyUserToken = async (token) => {
 	try {
