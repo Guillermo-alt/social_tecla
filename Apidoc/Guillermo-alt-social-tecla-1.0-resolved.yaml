@@ -1,4 +1,4 @@
-https://app.swaggerhub.com/apis-docs/Guillermo-alt/social-tecla/1.0
+#https://app.swaggerhub.com/apis-docs/Guillermo-alt/social-tecla/1.0#/
 ---
 openapi: 3.0.0
 info:
@@ -10,6 +10,7 @@ info:
   version: "1.0"
 servers:
 - url: http://127.0.0.1:3000
+- url: http://localhost:3000
 security:
 - httpBearer: []
 tags:
@@ -398,15 +399,6 @@ paths:
       summary: add skill user
       operationId: addskilluser
       parameters: []
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/addskilluserrequest'
-            example:
-              nameSkill: Sql server
-              id_user: "1"
-        required: true
       responses:
         "200":
           description: OK
@@ -489,16 +481,6 @@ paths:
       summary: add studies
       operationId: addstudies
       parameters: []
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/addstudiesrequest'
-            example:
-              institution: Universidad Autónoma Metropolitana Cuajimalpa
-              period: 2017-2021
-              id_user: "1"
-        required: true
       responses:
         "200":
           description: OK
@@ -1130,6 +1112,44 @@ paths:
       deprecated: false
       servers:
       - url: http://localhost:3000
+  /upload/cover/1:
+    post:
+      tags:
+      - Misc
+      summary: upload cover user
+      operationId: uploadcoveruser
+      parameters: []
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/cover_1_body'
+            encoding: {}
+        required: false
+      responses:
+        "200": {}
+      deprecated: false
+      servers:
+      - url: http://localhost:3000
+  /upload/photo/1:
+    post:
+      tags:
+      - Misc
+      summary: upload photo profile user
+      operationId: uploadphotoprofileuser
+      parameters: []
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/photo_1_body'
+            encoding: {}
+        required: false
+      responses:
+        "200": {}
+      deprecated: false
+      servers:
+      - url: http://localhost:3000
 components:
   schemas:
     createuserregisterrequest:
@@ -1392,20 +1412,6 @@ components:
       example:
         id_user: "1"
         password: pass
-    addskilluserrequest:
-      title: addskilluserrequest
-      required:
-      - id_user
-      - nameSkill
-      type: object
-      properties:
-        nameSkill:
-          type: string
-        id_user:
-          type: string
-      example:
-        nameSkill: Sql server
-        id_user: "1"
     addskilluser:
       title: addskilluser
       required:
@@ -1444,24 +1450,6 @@ components:
         score: 10
         updatedAt: 2021-08-30T07:26:06.059+0000
         createdAt: 2021-08-30T07:26:06.059+0000
-    addstudiesrequest:
-      title: addstudiesrequest
-      required:
-      - id_user
-      - institution
-      - period
-      type: object
-      properties:
-        institution:
-          type: string
-        period:
-          type: string
-        id_user:
-          type: string
-      example:
-        institution: Universidad Autónoma Metropolitana Cuajimalpa
-        period: 2017-2021
-        id_user: "1"
     addstudies:
       title: addstudies
       required:
@@ -1984,6 +1972,20 @@ components:
       example:
         score: "20"
         id_skill: "1"
+    cover_1_body:
+      required:
+      - cover_page
+      type: object
+      properties:
+        cover_page:
+          type: string
+    photo_1_body:
+      required:
+      - img_profile
+      type: object
+      properties:
+        img_profile:
+          type: string
   securitySchemes:
     httpBearer:
       type: http

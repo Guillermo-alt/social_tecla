@@ -1,0 +1,1344 @@
+{
+	"info": {
+		"_postman_id": "dcbc728a-ee14-499e-9105-58076683b2b5",
+		"name": "Social_Tecla",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create user register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\":\"Guiller\",\r\n    \"email\":\"guiller@hotmail.com\",\r\n    \"names\":\"Guillermo\",\r\n    \"last_names\":\"Ortega Vargas\",\r\n    \"password\":\"pass\",\r\n    \"date_of_birth\":\"1994/05/28\",\r\n    \"phone\":\"5558109026\",\r\n    \"address\":\"Fresnos 2 Las cruces CDMX México\",\r\n    \"About_me\":\"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet sapiente repellat vero libero dolor ex nam, \"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/users/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create user register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"Guiller\",\r\n    \"email\":\"guiller@hotmail.com\",\r\n    \"names\":\"Guillermo\",\r\n    \"last_names\":\"Ortega Vargas\",\r\n    \"password\":\"pass\",\r\n    \"date_of_birth\":\"1994/05/28\",\r\n    \"phone\":\"5558109026\",\r\n    \"address\":\"Fresnos 2 Las cruces CDMX México\",\r\n    \"About_me\":\"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet sapiente repellat vero libero dolor ex nam, \"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/users/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "535"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"217-xlDFOIUpzuemlZwxyEaAVrNewqY\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 30 Aug 2021 07:21:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id_user\": 1,\n    \"userName\": \"Guiller\",\n    \"email\": \"guiller@hotmail.com\",\n    \"names\": \"Guillermo\",\n    \"last_names\": \"Ortega Vargas\",\n    \"password\": \"pass\",\n    \"profile_photo\": \"default/defaulProfile.png\",\n    \"cover_page\": \"default/defaultCover.png\",\n    \"date_of_birth\": \"1994/05/28\",\n    \"About_me\": \"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet sapiente repellat vero libero dolor ex nam, \",\n    \"phone\": \"5558109026\",\n    \"address\": \"Fresnos 2 Las cruces CDMX México\",\n    \"active\": 1,\n    \"role\": \"user\",\n    \"updatedAt\": \"2021-08-30T07:21:41.949Z\",\n    \"createdAt\": \"2021-08-30T07:21:41.949Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "user login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"guiller@hotmail.com\",\r\n    \"password\":\"pass\",\r\n    \"role\":\"user\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/user/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "user login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"guiller@hotmail.com\",\r\n    \"password\":\"pass\",\r\n    \"role\":\"user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/user/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "202"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ca-DM+gTa3sDdmXefKsB1HCsgx/TU4\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 30 Aug 2021 07:24:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiZ3VpbGxlckBob3RtYWlsLmNvbSIsInBhc3N3b3JkIjoicGFzcyIsInJvbGUiOiJ1c2VyIn0sImlhdCI6MTYzMDMwODI0OH0.KvRHk_4ikRD3aNVd0R-gjPZLKQx3ox-7oM4X7e0TTQI\""
+				}
+			]
+		},
+		{
+			"name": "get user data",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiZ3VpbGxlckBob3RtYWlsLmNvbSIsInBhc3N3b3JkIjoicGFzcyIsInJvbGUiOiJ1c2VyIn0sImlhdCI6MTYzMDMwODI0OH0.KvRHk_4ikRD3aNVd0R-gjPZLKQx3ox-7oM4X7e0TTQI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/user",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get user data",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/user",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "639"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"27f-aFki+tJyloCp7bqRetMe94Pyuv8\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 30 Aug 2021 07:25:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id_user\": 1,\n    \"userName\": \"Guiller\",\n    \"email\": \"guiller@hotmail.com\",\n    \"names\": \"Guillermo\",\n    \"last_names\": \"Ortega Vargas\",\n    \"password\": \"pass\",\n    \"profile_photo\": \"default/defaulProfile.png\",\n    \"cover_page\": \"default/defaultCover.png\",\n    \"date_of_birth\": \"1994/05/28\",\n    \"About_me\": \"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet sapiente repellat vero libero dolor ex nam, \",\n    \"address\": \"Fresnos 2 Las cruces CDMX México\",\n    \"phone\": \"5558109026\",\n    \"active\": 1,\n    \"role\": \"user\",\n    \"createdAt\": \"2021-08-30T07:21:41.949Z\",\n    \"updatedAt\": \"2021-08-30T07:23:40.892Z\",\n    \"hobbies\": [],\n    \"skills\": [],\n    \"studies\": [],\n    \"languages\": [],\n    \"socialNetworks\": [],\n    \"pictures\": [],\n    \"friendships\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "change password user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiZ3VpbGxlckBob3RtYWlsLmNvbSIsInBhc3N3b3JkIjoicGFzcyIsInJvbGUiOiJ1c2VyIn0sImlhdCI6MTYzMDMwNzY2MX0.wwANbgvNP-2T1vyEeLp-62QesoYYA_PU0S9ZVtsOAbw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_user\":\"1\",\r\n    \"password\":\"pass\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/user/pass",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"pass"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "change password user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_user\":\"1\",\r\n    \"password\":\"pass\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/user/pass",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"pass"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "20"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"14-MH+BdKzyBuHBmkiU+thVFKlVEHE\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 30 Aug 2021 07:23:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "\"password changed !\""
+				}
+			]
+		},
+		{
+			"name": "add skill user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiZ3VpbGxlckBob3RtYWlsLmNvbSIsInBhc3N3b3JkIjoicGFzcyIsInJvbGUiOiJ1c2VyIn0sImlhdCI6MTYzMDMwODI0OH0.KvRHk_4ikRD3aNVd0R-gjPZLKQx3ox-7oM4X7e0TTQI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"type": "file",
+							"src": []
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/skills",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"skills"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "add skill user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nameSkill\":\"Sql server\",\r\n    \"id_user\":\"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/skills",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"skills"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "154"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9a-SwimFpurlfFW3kNKe+aUppgb3ns\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 30 Aug 2021 07:26:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id_skill\": 1,\n    \"name\": \"Sql server\",\n    \"id_user\": 1,\n    \"totalUserScore\": 0,\n    \"score\": 10,\n    \"updatedAt\": \"2021-08-30T07:26:06.059Z\",\n    \"createdAt\": \"2021-08-30T07:26:06.059Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "add studies",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiZ3VpbGxlcjc2QGhvdG1haWwuY29tIiwicGFzc3dvcmQiOiJwYXNzIiwicm9sZSI6InVzZXIifSwiaWF0IjoxNjMwMjczOTUyfQ.advNqWk5-Gg6GDuLd1xPBJGuaG6Blbv9Yda68Rydh5M",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/studies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"studies"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "add studies",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"institution\":\"Universidad Autónoma Metropolitana Cuajimalpa\",\r\n    \"period\":\"2017-2021\",\r\n    \"id_user\":\"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/studies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"studies"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "190"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"be-qoupNcosisE721PUIrKDwFvuE5g\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 30 Aug 2021 07:27:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id_studies\": 1,\n    \"institution\": \"Universidad Autónoma Metropolitana Cuajimalpa\",\n    \"period\": \"2017-2021\",\n    \"id_user\": 1,\n    \"updatedAt\": \"2021-08-30T07:27:12.638Z\",\n    \"createdAt\": \"2021-08-30T07:27:12.638Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "add languages",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiZ3VpbGxlcjc2QGhvdG1haWwuY29tIiwicGFzc3dvcmQiOiJwYXNzIiwicm9sZSI6InVzZXIifSwiaWF0IjoxNjMwMjczOTUyfQ.advNqWk5-Gg6GDuLd1xPBJGuaG6Blbv9Yda68Rydh5M",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Ingles\",\r\n    \"level\":\"B2\",\r\n    \"id_user\":\"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/languages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"languages"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "add languages",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Ingles\",\r\n    \"level\":\"B2\",\r\n    \"id_user\":\"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/languages",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"languages"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "136"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"88-amL0R75w1B17Ba5/I7EJMtj1g1o\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 30 Aug 2021 07:27:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id_lenguage\": 1,\n    \"name\": \"Ingles\",\n    \"level\": \"B2\",\n    \"id_user\": 1,\n    \"updatedAt\": \"2021-08-30T07:27:29.386Z\",\n    \"createdAt\": \"2021-08-30T07:27:29.386Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "add social newtwork",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiZ3VpbGxlcjc2QGhvdG1haWwuY29tIiwicGFzc3dvcmQiOiJwYXNzIiwicm9sZSI6InVzZXIifSwiaWF0IjoxNjMwMjczOTUyfQ.advNqWk5-Gg6GDuLd1xPBJGuaG6Blbv9Yda68Rydh5M",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"newtwork\":\"https://github.com/Guillermo-alt\",\r\n    \"id_user\":\"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/social",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"social"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "add social newtwork",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newtwork\":\"https://github.com/Guillermo-alt\",\r\n    \"id_user\":\"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/social",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"social"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "153"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"99-AW1UfyfrPPQEbnSSGV5uK+ttNw8\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 30 Aug 2021 07:27:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id_newtwork\": 1,\n    \"newtwork\": \"https://github.com/Guillermo-alt\",\n    \"id_user\": 1,\n    \"updatedAt\": \"2021-08-30T07:27:50.389Z\",\n    \"createdAt\": \"2021-08-30T07:27:50.389Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "add hobbies",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiZ3VpbGxlcjc2QGhvdG1haWwuY29tIiwicGFzc3dvcmQiOiJwYXNzIiwicm9sZSI6InVzZXIifSwiaWF0IjoxNjMwMjczOTUyfQ.advNqWk5-Gg6GDuLd1xPBJGuaG6Blbv9Yda68Rydh5M",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"play guitar\",\r\n    \"description\":\"play covers, rock an roll genre\",\r\n    \"id_user\":\"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/hobbies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"hobbies"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "add hobbies",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"play guitar\",\r\n    \"description\":\"play covers, rock an roll genre\",\r\n    \"id_user\":\"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/hobbies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"hobbies"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "174"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ae-TYn8tjc4E8IGIVd2Qu9fz7WYCbw\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 30 Aug 2021 07:28:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id_hobbie\": 1,\n    \"name\": \"play guitar\",\n    \"description\": \"play covers, rock an roll genre\",\n    \"id_user\": 1,\n    \"updatedAt\": \"2021-08-30T07:28:03.657Z\",\n    \"createdAt\": \"2021-08-30T07:28:03.657Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "add friends",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiZ3VpbGxlcjc2QGhvdG1haWwuY29tIiwicGFzc3dvcmQiOiJwYXNzIiwicm9sZSI6InVzZXIifSwiaWF0IjoxNjMwMjczOTUyfQ.advNqWk5-Gg6GDuLd1xPBJGuaG6Blbv9Yda68Rydh5M",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_user_friend\":\"65\",\r\n    \"id_user\":\"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/friends",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"friends"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "add friends",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_user_friend\":\"65\",\r\n    \"id_user\":\"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/friends",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"friends"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 30 Aug 2021 07:28:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "get user for id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiZ3VpbGxlckBob3RtYWlsLmNvbSIsInBhc3N3b3JkIjoicGFzcyIsInJvbGUiOiJ1c2VyIn0sImlhdCI6MTYzMDMwODI0OH0.KvRHk_4ikRD3aNVd0R-gjPZLKQx3ox-7oM4X7e0TTQI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/user/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get user for id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/user/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1446"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5a6-7mMj91NbpXnnW6mHbb1x21DhZT8\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 30 Aug 2021 07:28:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id_user\": 1,\n    \"userName\": \"Guiller\",\n    \"email\": \"guiller@hotmail.com\",\n    \"names\": \"Guillermo\",\n    \"last_names\": \"Ortega Vargas\",\n    \"password\": \"pass\",\n    \"profile_photo\": \"default/defaulProfile.png\",\n    \"cover_page\": \"default/defaultCover.png\",\n    \"date_of_birth\": \"1994/05/28\",\n    \"About_me\": \"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet sapiente repellat vero libero dolor ex nam, \",\n    \"address\": \"Fresnos 2 Las cruces CDMX México\",\n    \"phone\": \"5558109026\",\n    \"active\": 1,\n    \"role\": \"user\",\n    \"createdAt\": \"2021-08-30T07:21:41.949Z\",\n    \"updatedAt\": \"2021-08-30T07:23:40.892Z\",\n    \"hobbies\": [\n        {\n            \"id_hobbie\": 1,\n            \"name\": \"play guitar\",\n            \"description\": \"play covers, rock an roll genre\",\n            \"createdAt\": \"2021-08-30T07:28:03.657Z\",\n            \"updatedAt\": \"2021-08-30T07:28:03.657Z\",\n            \"id_user\": 1\n        }\n    ],\n    \"skills\": [\n        {\n            \"id_skill\": 1,\n            \"name\": \"Sql server\",\n            \"score\": 10,\n            \"totalUserScore\": 0,\n            \"createdAt\": \"2021-08-30T07:26:06.059Z\",\n            \"updatedAt\": \"2021-08-30T07:26:06.059Z\",\n            \"id_user\": 1\n        }\n    ],\n    \"studies\": [\n        {\n            \"id_studies\": 1,\n            \"institution\": \"Universidad Autónoma Metropolitana Cuajimalpa\",\n            \"period\": \"2017-2021\",\n            \"createdAt\": \"2021-08-30T07:27:12.638Z\",\n            \"updatedAt\": \"2021-08-30T07:27:12.638Z\",\n            \"id_user\": 1\n        }\n    ],\n    \"languages\": [\n        {\n            \"id_lenguage\": 1,\n            \"name\": \"Ingles\",\n            \"level\": \"B2\",\n            \"createdAt\": \"2021-08-30T07:27:29.386Z\",\n            \"updatedAt\": \"2021-08-30T07:27:29.386Z\",\n            \"id_user\": 1\n        }\n    ],\n    \"socialNetworks\": [\n        {\n            \"id_newtwork\": 1,\n            \"newtwork\": \"https://github.com/Guillermo-alt\",\n            \"createdAt\": \"2021-08-30T07:27:50.389Z\",\n            \"updatedAt\": \"2021-08-30T07:27:50.389Z\",\n            \"id_user\": 1\n        }\n    ],\n    \"pictures\": [],\n    \"friendships\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "add score skill",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiZ3VpbGxlckBob3RtYWlsLmNvbSIsInBhc3N3b3JkIjoicGFzcyIsInJvbGUiOiJ1c2VyIn0sImlhdCI6MTYzMDMwODI0OH0.KvRHk_4ikRD3aNVd0R-gjPZLKQx3ox-7oM4X7e0TTQI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_skill\":\"1\",\r\n    \"score\":\"20\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/skill/score",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"skill",
+						"score"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "add score skill",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_skill\":\"1\",\r\n    \"score\":\"20\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/skill/score",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"skill",
+								"score"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1d-Utqbs5q17VBKFW0ckipzE4BdUtE\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 30 Aug 2021 07:35:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"score\": \"20\",\n    \"id_skill\": \"1\"\n}"
+				}
+			]
+		},
+		{
+			"name": "upload cover user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "cover_page",
+							"type": "file",
+							"src": "/C:/Users/guill/Downloads/asd.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/upload/cover/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"upload",
+						"cover",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upload photo profile user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "img_profile",
+							"type": "file",
+							"src": "/C:/Users/guill/Downloads/asdq.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/upload/photo/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"upload",
+						"photo",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

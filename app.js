@@ -14,6 +14,8 @@ const SocialNetworks = require('./db/db.socialNetworks.model');
 const Pictures = require('./db/db.pictures.model');
 const Friendships = require('./db/db.friendships.model');
 
+const middlewares = require('./middlewares/middlewares');
+
 const viewUsers =  require ('./app/view/view.users');
 const viewsRutes = require('./routes/routes');
 
@@ -25,6 +27,7 @@ app.use(bodyParser.json());
 
 app.use(cors());
 app.use(express.json());
+app.use(middlewares.limiter);
 
 app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
