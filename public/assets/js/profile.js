@@ -13,6 +13,7 @@ class ProfileUser {
     document.getElementById('date').innerHTML  = this.data.date_of_birth;
     document.getElementById('phone').innerHTML  = this.data.phone;
     document.getElementById('address').innerHTML  = this.data.address;
+    document.getElementById('aboutme').innerHTML  = this.data.About_me;
     var cover = document.getElementById("body");                                          
     cover.style.backgroundImage =  `url("/assets/img/${this.data.cover_page}")`;
 

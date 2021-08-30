@@ -319,7 +319,10 @@ module.exports.updateScore = async (body) => {
 		});
        
 		if (Skill != null) {
-			return 'New score added = '+body.score;
+			return {
+                "score": body.score,
+                "id_skill" : body.id_skill
+            }
 			
 		}
 		throw new Error('User no longer exists or is inactive');

@@ -4,7 +4,7 @@ const controlUsers = require('../controller/controlUsers');
 const middlewares = require('../../middlewares/middlewares');
 const multer = require("multer");
 
-const upload = multer({
+const upload = multer({//Temporary location
     dest: "/path/to/temporary/directory/to/store/uploaded/files"
   });
   
@@ -25,7 +25,7 @@ module.exports = async (app)=>{
 
 
 //create user 
-app.post('/users/register',/*middlewares.validateRegisterInfo ,/*middlewares.corsOption,*/async (req, res) =>{
+app.post('/users/register',middlewares.validateRegisterInfo ,/*middlewares.corsOption,*/async (req, res) =>{
     try {
         let user = await controlUsers.createUser(req.body);
         res.status(200).json(user);
@@ -35,7 +35,7 @@ app.post('/users/register',/*middlewares.validateRegisterInfo ,/*middlewares.cor
  });
 
  //login user
- app.post('/user/login', /*middlewares.validateLoginInfo, /*middlewares.corsOption,*/async (req, res) => {
+ app.post('/user/login', middlewares.validateLoginInfo, /*middlewares.corsOption,*/async (req, res) => {
     let user = req.body;
     try {
         const ok = await controlUsers.validateUser(user);
@@ -61,11 +61,11 @@ app.post('/users/register',/*middlewares.validateRegisterInfo ,/*middlewares.cor
      });
    
 //change password
-app.post('/user/pass', middlewares.validateToken,/*middlewares.chamgePassInfor,/*middlewares.corsOption,*/async (req, res) =>{
+app.post('/user/pass', middlewares.validateToken,middlewares.changePassInfor,/*middlewares.corsOption,*/async (req, res) =>{
     try {
         let ok = await controlUsers.updatePassword(req.body);
-        if(ok===1){
-            res.status(200).json('password changed !');
+        if(ok==1){
+            res.status(200).json(ok);
         }else{
             res.status(200).json('error in the request params !'); 
         }
@@ -75,7 +75,7 @@ app.post('/user/pass', middlewares.validateToken,/*middlewares.chamgePassInfor,/
  });   
 
  //add Skill
-app.post('/user/skills',middlewares.validateToken ,/*middlewares.corsOption,*/async (req, res) =>{
+app.post('/user/skills',middlewares.validateToken , middlewares.validateSkill,/*middlewares.corsOption,*/async (req, res) =>{
     try {
         let user = await controlUsers.addSkill(req.body);
         res.status(200).json(user);
@@ -85,7 +85,7 @@ app.post('/user/skills',middlewares.validateToken ,/*middlewares.corsOption,*/as
  });
 
   //add studies
-app.post('/user/studies',middlewares.validateToken ,/*middlewares.corsOption,*/async (req, res) =>{
+app.post('/user/studies',middlewares.validateToken ,middlewares.validateStudies,/*middlewares.corsOption,*/async (req, res) =>{
     try {
         let user = await controlUsers.addStudies(req.body);
         res.status(200).json(user);
@@ -105,7 +105,7 @@ app.post('/user/languages',middlewares.validateToken ,/*middlewares.corsOption,*
  });
 
     //add social Network
-app.post('/user/social',middlewares.validateToken ,/*middlewares.corsOption,*/async (req, res) =>{
+app.post('/user/social',middlewares.validateToken ,middlewares.validateSocialNet,/*middlewares.corsOption,*/async (req, res) =>{
     try {
         let user = await controlUsers.addSocial(req.body);
         res.status(200).json(user);

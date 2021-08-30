@@ -1,0 +1,1990 @@
+https://app.swaggerhub.com/apis-docs/Guillermo-alt/social-tecla/1.0
+---
+openapi: 3.0.0
+info:
+  title: social-tecla
+  contact:
+    name: Guillermo Ortega Vargas
+    url: https://github.com/Guillermo-alt
+    email: Guillermo76ov@hotmail.com
+  version: "1.0"
+servers:
+- url: http://127.0.0.1:3000
+security:
+- httpBearer: []
+tags:
+- name: Misc
+paths:
+  /users/register:
+    post:
+      tags:
+      - Misc
+      summary: create user register
+      operationId: createuserregister
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/createuserregisterrequest'
+            example:
+              userName: Guiller
+              email: guiller@hotmail.com
+              names: Guillermo
+              last_names: Ortega Vargas
+              password: pass
+              date_of_birth: 1994/05/28
+              phone: "5558109026"
+              address: Fresnos 2 Las cruces CDMX México
+              About_me: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet sapiente repellat vero libero dolor ex nam, '
+        required: true
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-Powered-By:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: Express
+            Access-Control-Allow-Origin:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: '*'
+            Content-Length:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: "535"
+            ETag:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: W/"217-xlDFOIUpzuemlZwxyEaAVrNewqY"
+            Date:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: Mon, 30 Aug 2021 07:21:41 GMT
+            Connection:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: keep-alive
+            Keep-Alive:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: timeout=5
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/schemas/createuserregister'
+              example:
+                id_user: 1
+                userName: Guiller
+                email: guiller@hotmail.com
+                names: Guillermo
+                last_names: Ortega Vargas
+                password: pass
+                profile_photo: default/defaulProfile.png
+                cover_page: default/defaultCover.png
+                date_of_birth: 1994/05/28
+                About_me: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet sapiente repellat vero libero dolor ex nam, '
+                phone: "5558109026"
+                address: Fresnos 2 Las cruces CDMX México
+                active: 1
+                role: user
+                updatedAt: 2021-08-30T07:21:41.949+0000
+                createdAt: 2021-08-30T07:21:41.949+0000
+      deprecated: false
+      servers:
+      - url: http://127.0.0.1:3000
+  /user/login:
+    post:
+      tags:
+      - Misc
+      summary: user login
+      operationId: userlogin
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/userloginrequest'
+            example:
+              email: guiller@hotmail.com
+              password: pass
+              role: user
+        required: true
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-Powered-By:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: Express
+            Access-Control-Allow-Origin:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: '*'
+            Content-Length:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: "202"
+            ETag:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: W/"ca-DM+gTa3sDdmXefKsB1HCsgx/TU4"
+            Date:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: Mon, 30 Aug 2021 07:24:08 GMT
+            Connection:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: keep-alive
+            Keep-Alive:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: timeout=5
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: string
+                example: '"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiZ3VpbGxlckBob3RtYWlsLmNvbSIsInBhc3N3b3JkIjoicGFzcyIsInJvbGUiOiJ1c2VyIn0sImlhdCI6MTYzMDMwODI0OH0.KvRHk_4ikRD3aNVd0R-gjPZLKQx3ox-7oM4X7e0TTQI"'
+              example: '"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiZ3VpbGxlckBob3RtYWlsLmNvbSIsInBhc3N3b3JkIjoicGFzcyIsInJvbGUiOiJ1c2VyIn0sImlhdCI6MTYzMDMwODI0OH0.KvRHk_4ikRD3aNVd0R-gjPZLKQx3ox-7oM4X7e0TTQI"'
+      deprecated: false
+      servers:
+      - url: http://127.0.0.1:3000
+  /user:
+    get:
+      tags:
+      - Misc
+      summary: get user data
+      operationId: getuserdata
+      parameters: []
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-Powered-By:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: Express
+            Access-Control-Allow-Origin:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: '*'
+            Content-Length:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: "639"
+            ETag:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: W/"27f-aFki+tJyloCp7bqRetMe94Pyuv8"
+            Date:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: Mon, 30 Aug 2021 07:25:15 GMT
+            Connection:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: keep-alive
+            Keep-Alive:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: timeout=5
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/schemas/getuserdata'
+              example:
+                id_user: 1
+                userName: Guiller
+                email: guiller@hotmail.com
+                names: Guillermo
+                last_names: Ortega Vargas
+                password: pass
+                profile_photo: default/defaulProfile.png
+                cover_page: default/defaultCover.png
+                date_of_birth: 1994/05/28
+                About_me: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet sapiente repellat vero libero dolor ex nam, '
+                address: Fresnos 2 Las cruces CDMX México
+                phone: "5558109026"
+                active: 1
+                role: user
+                createdAt: 2021-08-30T07:21:41.949+0000
+                updatedAt: 2021-08-30T07:23:40.892+0000
+                hobbies: []
+                skills: []
+                studies: []
+                languages: []
+                socialNetworks: []
+                pictures: []
+                friendships: []
+      deprecated: false
+      servers:
+      - url: http://127.0.0.1:3000
+  /user/pass:
+    post:
+      tags:
+      - Misc
+      summary: change password user
+      operationId: changepassworduser
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/changepassworduserrequest'
+            example:
+              id_user: "1"
+              password: pass
+        required: true
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-Powered-By:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: Express
+            Access-Control-Allow-Origin:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: '*'
+            Content-Length:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: "20"
+            ETag:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: W/"14-MH+BdKzyBuHBmkiU+thVFKlVEHE"
+            Date:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: Mon, 30 Aug 2021 07:23:40 GMT
+            Connection:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: keep-alive
+            Keep-Alive:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: timeout=5
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: string
+                example: '"password changed !"'
+              example: '"password changed !"'
+      deprecated: false
+      servers:
+      - url: http://127.0.0.1:3000
+  /user/skills:
+    post:
+      tags:
+      - Misc
+      summary: add skill user
+      operationId: addskilluser
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/addskilluserrequest'
+            example:
+              nameSkill: Sql server
+              id_user: "1"
+        required: true
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-Powered-By:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: Express
+            Access-Control-Allow-Origin:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: '*'
+            Content-Length:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: "154"
+            ETag:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: W/"9a-SwimFpurlfFW3kNKe+aUppgb3ns"
+            Date:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: Mon, 30 Aug 2021 07:26:06 GMT
+            Connection:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: keep-alive
+            Keep-Alive:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: timeout=5
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/schemas/addskilluser'
+              example:
+                id_skill: 1
+                name: Sql server
+                id_user: 1
+                totalUserScore: 0
+                score: 10
+                updatedAt: 2021-08-30T07:26:06.059+0000
+                createdAt: 2021-08-30T07:26:06.059+0000
+      deprecated: false
+      servers:
+      - url: http://localhost:3000
+  /user/studies:
+    post:
+      tags:
+      - Misc
+      summary: add studies
+      operationId: addstudies
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/addstudiesrequest'
+            example:
+              institution: Universidad Autónoma Metropolitana Cuajimalpa
+              period: 2017-2021
+              id_user: "1"
+        required: true
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-Powered-By:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: Express
+            Access-Control-Allow-Origin:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: '*'
+            Content-Length:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: "190"
+            ETag:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: W/"be-qoupNcosisE721PUIrKDwFvuE5g"
+            Date:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: Mon, 30 Aug 2021 07:27:12 GMT
+            Connection:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: keep-alive
+            Keep-Alive:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: timeout=5
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/schemas/addstudies'
+              example:
+                id_studies: 1
+                institution: Universidad Autónoma Metropolitana Cuajimalpa
+                period: 2017-2021
+                id_user: 1
+                updatedAt: 2021-08-30T07:27:12.638+0000
+                createdAt: 2021-08-30T07:27:12.638+0000
+      deprecated: false
+      servers:
+      - url: http://localhost:3000
+  /user/languages:
+    post:
+      tags:
+      - Misc
+      summary: add languages
+      operationId: addlanguages
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/addlanguagesrequest'
+            example:
+              name: Ingles
+              level: B2
+              id_user: "1"
+        required: true
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-Powered-By:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: Express
+            Access-Control-Allow-Origin:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: '*'
+            Content-Length:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: "136"
+            ETag:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: W/"88-amL0R75w1B17Ba5/I7EJMtj1g1o"
+            Date:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: Mon, 30 Aug 2021 07:27:29 GMT
+            Connection:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: keep-alive
+            Keep-Alive:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: timeout=5
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/schemas/addlanguages'
+              example:
+                id_lenguage: 1
+                name: Ingles
+                level: B2
+                id_user: 1
+                updatedAt: 2021-08-30T07:27:29.386+0000
+                createdAt: 2021-08-30T07:27:29.386+0000
+      deprecated: false
+      servers:
+      - url: http://localhost:3000
+  /user/social:
+    post:
+      tags:
+      - Misc
+      summary: add social newtwork
+      operationId: addsocialnewtwork
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/addsocialnewtworkrequest'
+            example:
+              newtwork: https://github.com/Guillermo-alt
+              id_user: "1"
+        required: true
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-Powered-By:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: Express
+            Access-Control-Allow-Origin:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: '*'
+            Content-Length:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: "153"
+            ETag:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: W/"99-AW1UfyfrPPQEbnSSGV5uK+ttNw8"
+            Date:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: Mon, 30 Aug 2021 07:27:50 GMT
+            Connection:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: keep-alive
+            Keep-Alive:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: timeout=5
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/schemas/addsocialnewtwork'
+              example:
+                id_newtwork: 1
+                newtwork: https://github.com/Guillermo-alt
+                id_user: 1
+                updatedAt: 2021-08-30T07:27:50.389+0000
+                createdAt: 2021-08-30T07:27:50.389+0000
+      deprecated: false
+      servers:
+      - url: http://localhost:3000
+  /user/hobbies:
+    post:
+      tags:
+      - Misc
+      summary: add hobbies
+      operationId: addhobbies
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/addhobbiesrequest'
+            example:
+              name: play guitar
+              description: play covers, rock an roll genre
+              id_user: "1"
+        required: true
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-Powered-By:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: Express
+            Access-Control-Allow-Origin:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: '*'
+            Content-Length:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: "174"
+            ETag:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: W/"ae-TYn8tjc4E8IGIVd2Qu9fz7WYCbw"
+            Date:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: Mon, 30 Aug 2021 07:28:03 GMT
+            Connection:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: keep-alive
+            Keep-Alive:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: timeout=5
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/schemas/addhobbies'
+              example:
+                id_hobbie: 1
+                name: play guitar
+                description: play covers, rock an roll genre
+                id_user: 1
+                updatedAt: 2021-08-30T07:28:03.657+0000
+                createdAt: 2021-08-30T07:28:03.657+0000
+      deprecated: false
+      servers:
+      - url: http://localhost:3000
+  /user/friends:
+    post:
+      tags:
+      - Misc
+      summary: add friends
+      operationId: addfriends
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/addfriendsrequest'
+            example:
+              id_user_friend: "65"
+              id_user: "1"
+        required: true
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-Powered-By:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: Express
+            Access-Control-Allow-Origin:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: '*'
+            Date:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: Mon, 30 Aug 2021 07:28:13 GMT
+            Connection:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: keep-alive
+            Keep-Alive:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: timeout=5
+            Content-Length:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: "0"
+          content: {}
+      deprecated: false
+      servers:
+      - url: http://localhost:3000
+  /user/1:
+    get:
+      tags:
+      - Misc
+      summary: get user for id
+      operationId: getuserforid
+      parameters: []
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-Powered-By:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: Express
+            Access-Control-Allow-Origin:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: '*'
+            Content-Length:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: "1446"
+            ETag:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: W/"5a6-7mMj91NbpXnnW6mHbb1x21DhZT8"
+            Date:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: Mon, 30 Aug 2021 07:28:57 GMT
+            Connection:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: keep-alive
+            Keep-Alive:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: timeout=5
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/schemas/getuserforid'
+              example:
+                id_user: 1
+                userName: Guiller
+                email: guiller@hotmail.com
+                names: Guillermo
+                last_names: Ortega Vargas
+                password: pass
+                profile_photo: default/defaulProfile.png
+                cover_page: default/defaultCover.png
+                date_of_birth: 1994/05/28
+                About_me: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet sapiente repellat vero libero dolor ex nam, '
+                address: Fresnos 2 Las cruces CDMX México
+                phone: "5558109026"
+                active: 1
+                role: user
+                createdAt: 2021-08-30T07:21:41.949+0000
+                updatedAt: 2021-08-30T07:23:40.892+0000
+                hobbies:
+                - id_hobbie: 1
+                  name: play guitar
+                  description: play covers, rock an roll genre
+                  createdAt: 2021-08-30T07:28:03.657+0000
+                  updatedAt: 2021-08-30T07:28:03.657+0000
+                  id_user: 1
+                skills:
+                - id_skill: 1
+                  name: Sql server
+                  score: 10
+                  totalUserScore: 0
+                  createdAt: 2021-08-30T07:26:06.059+0000
+                  updatedAt: 2021-08-30T07:26:06.059+0000
+                  id_user: 1
+                studies:
+                - id_studies: 1
+                  institution: Universidad Autónoma Metropolitana Cuajimalpa
+                  period: 2017-2021
+                  createdAt: 2021-08-30T07:27:12.638+0000
+                  updatedAt: 2021-08-30T07:27:12.638+0000
+                  id_user: 1
+                languages:
+                - id_lenguage: 1
+                  name: Ingles
+                  level: B2
+                  createdAt: 2021-08-30T07:27:29.386+0000
+                  updatedAt: 2021-08-30T07:27:29.386+0000
+                  id_user: 1
+                socialNetworks:
+                - id_newtwork: 1
+                  newtwork: https://github.com/Guillermo-alt
+                  createdAt: 2021-08-30T07:27:50.389+0000
+                  updatedAt: 2021-08-30T07:27:50.389+0000
+                  id_user: 1
+                pictures: []
+                friendships: []
+      deprecated: false
+      servers:
+      - url: http://localhost:3000
+  /skill/score:
+    post:
+      tags:
+      - Misc
+      summary: add score skill
+      operationId: addscoreskill
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/addscoreskillrequest'
+            example:
+              id_skill: "1"
+              score: "20"
+        required: true
+      responses:
+        "200":
+          description: OK
+          headers:
+            X-Powered-By:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: Express
+            Access-Control-Allow-Origin:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: '*'
+            Content-Length:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: "29"
+            ETag:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: W/"1d-Utqbs5q17VBKFW0ckipzE4BdUtE"
+            Date:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: Mon, 30 Aug 2021 07:35:07 GMT
+            Connection:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: keep-alive
+            Keep-Alive:
+              style: simple
+              explode: false
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: timeout=5
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/schemas/addscoreskill'
+              example:
+                score: "20"
+                id_skill: "1"
+      deprecated: false
+      servers:
+      - url: http://localhost:3000
+components:
+  schemas:
+    createuserregisterrequest:
+      title: createuserregisterrequest
+      required:
+      - About_me
+      - address
+      - date_of_birth
+      - email
+      - last_names
+      - names
+      - password
+      - phone
+      - userName
+      type: object
+      properties:
+        userName:
+          type: string
+        email:
+          type: string
+        names:
+          type: string
+        last_names:
+          type: string
+        password:
+          type: string
+        date_of_birth:
+          type: string
+        phone:
+          type: string
+        address:
+          type: string
+        About_me:
+          type: string
+      example:
+        userName: Guiller
+        email: guiller@hotmail.com
+        names: Guillermo
+        last_names: Ortega Vargas
+        password: pass
+        date_of_birth: 1994/05/28
+        phone: "5558109026"
+        address: Fresnos 2 Las cruces CDMX México
+        About_me: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet sapiente repellat vero libero dolor ex nam, '
+    createuserregister:
+      title: createuserregister
+      required:
+      - About_me
+      - active
+      - address
+      - cover_page
+      - createdAt
+      - date_of_birth
+      - email
+      - id_user
+      - last_names
+      - names
+      - password
+      - phone
+      - profile_photo
+      - role
+      - updatedAt
+      - userName
+      type: object
+      properties:
+        id_user:
+          type: integer
+          format: int32
+        userName:
+          type: string
+        email:
+          type: string
+        names:
+          type: string
+        last_names:
+          type: string
+        password:
+          type: string
+        profile_photo:
+          type: string
+        cover_page:
+          type: string
+        date_of_birth:
+          type: string
+        About_me:
+          type: string
+        phone:
+          type: string
+        address:
+          type: string
+        active:
+          type: integer
+          format: int32
+        role:
+          type: string
+        updatedAt:
+          type: string
+        createdAt:
+          type: string
+      example:
+        id_user: 1
+        userName: Guiller
+        email: guiller@hotmail.com
+        names: Guillermo
+        last_names: Ortega Vargas
+        password: pass
+        profile_photo: default/defaulProfile.png
+        cover_page: default/defaultCover.png
+        date_of_birth: 1994/05/28
+        About_me: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet sapiente repellat vero libero dolor ex nam, '
+        phone: "5558109026"
+        address: Fresnos 2 Las cruces CDMX México
+        active: 1
+        role: user
+        updatedAt: 2021-08-30T07:21:41.949+0000
+        createdAt: 2021-08-30T07:21:41.949+0000
+    userloginrequest:
+      title: userloginrequest
+      required:
+      - email
+      - password
+      - role
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+        role:
+          type: string
+      example:
+        email: guiller@hotmail.com
+        password: pass
+        role: user
+    getuserdata:
+      title: getuserdata
+      required:
+      - About_me
+      - active
+      - address
+      - cover_page
+      - createdAt
+      - date_of_birth
+      - email
+      - friendships
+      - hobbies
+      - id_user
+      - languages
+      - last_names
+      - names
+      - password
+      - phone
+      - pictures
+      - profile_photo
+      - role
+      - skills
+      - socialNetworks
+      - studies
+      - updatedAt
+      - userName
+      type: object
+      properties:
+        id_user:
+          type: integer
+          format: int32
+        userName:
+          type: string
+        email:
+          type: string
+        names:
+          type: string
+        last_names:
+          type: string
+        password:
+          type: string
+        profile_photo:
+          type: string
+        cover_page:
+          type: string
+        date_of_birth:
+          type: string
+        About_me:
+          type: string
+        address:
+          type: string
+        phone:
+          type: string
+        active:
+          type: integer
+          format: int32
+        role:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        hobbies:
+          type: array
+          items:
+            type: string
+        skills:
+          type: array
+          items:
+            type: string
+        studies:
+          type: array
+          items:
+            type: string
+        languages:
+          type: array
+          items:
+            type: string
+        socialNetworks:
+          type: array
+          items:
+            type: string
+        pictures:
+          type: array
+          items:
+            type: string
+        friendships:
+          type: array
+          items:
+            type: string
+      example:
+        id_user: 1
+        userName: Guiller
+        email: guiller@hotmail.com
+        names: Guillermo
+        last_names: Ortega Vargas
+        password: pass
+        profile_photo: default/defaulProfile.png
+        cover_page: default/defaultCover.png
+        date_of_birth: 1994/05/28
+        About_me: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet sapiente repellat vero libero dolor ex nam, '
+        address: Fresnos 2 Las cruces CDMX México
+        phone: "5558109026"
+        active: 1
+        role: user
+        createdAt: 2021-08-30T07:21:41.949+0000
+        updatedAt: 2021-08-30T07:23:40.892+0000
+        hobbies: []
+        skills: []
+        studies: []
+        languages: []
+        socialNetworks: []
+        pictures: []
+        friendships: []
+    changepassworduserrequest:
+      title: changepassworduserrequest
+      required:
+      - id_user
+      - password
+      type: object
+      properties:
+        id_user:
+          type: string
+        password:
+          type: string
+      example:
+        id_user: "1"
+        password: pass
+    addskilluserrequest:
+      title: addskilluserrequest
+      required:
+      - id_user
+      - nameSkill
+      type: object
+      properties:
+        nameSkill:
+          type: string
+        id_user:
+          type: string
+      example:
+        nameSkill: Sql server
+        id_user: "1"
+    addskilluser:
+      title: addskilluser
+      required:
+      - createdAt
+      - id_skill
+      - id_user
+      - name
+      - score
+      - totalUserScore
+      - updatedAt
+      type: object
+      properties:
+        id_skill:
+          type: integer
+          format: int32
+        name:
+          type: string
+        id_user:
+          type: integer
+          format: int32
+        totalUserScore:
+          type: integer
+          format: int32
+        score:
+          type: integer
+          format: int32
+        updatedAt:
+          type: string
+        createdAt:
+          type: string
+      example:
+        id_skill: 1
+        name: Sql server
+        id_user: 1
+        totalUserScore: 0
+        score: 10
+        updatedAt: 2021-08-30T07:26:06.059+0000
+        createdAt: 2021-08-30T07:26:06.059+0000
+    addstudiesrequest:
+      title: addstudiesrequest
+      required:
+      - id_user
+      - institution
+      - period
+      type: object
+      properties:
+        institution:
+          type: string
+        period:
+          type: string
+        id_user:
+          type: string
+      example:
+        institution: Universidad Autónoma Metropolitana Cuajimalpa
+        period: 2017-2021
+        id_user: "1"
+    addstudies:
+      title: addstudies
+      required:
+      - createdAt
+      - id_studies
+      - id_user
+      - institution
+      - period
+      - updatedAt
+      type: object
+      properties:
+        id_studies:
+          type: integer
+          format: int32
+        institution:
+          type: string
+        period:
+          type: string
+        id_user:
+          type: integer
+          format: int32
+        updatedAt:
+          type: string
+        createdAt:
+          type: string
+      example:
+        id_studies: 1
+        institution: Universidad Autónoma Metropolitana Cuajimalpa
+        period: 2017-2021
+        id_user: 1
+        updatedAt: 2021-08-30T07:27:12.638+0000
+        createdAt: 2021-08-30T07:27:12.638+0000
+    addlanguagesrequest:
+      title: addlanguagesrequest
+      required:
+      - id_user
+      - level
+      - name
+      type: object
+      properties:
+        name:
+          type: string
+        level:
+          type: string
+        id_user:
+          type: string
+      example:
+        name: Ingles
+        level: B2
+        id_user: "1"
+    addlanguages:
+      title: addlanguages
+      required:
+      - createdAt
+      - id_lenguage
+      - id_user
+      - level
+      - name
+      - updatedAt
+      type: object
+      properties:
+        id_lenguage:
+          type: integer
+          format: int32
+        name:
+          type: string
+        level:
+          type: string
+        id_user:
+          type: integer
+          format: int32
+        updatedAt:
+          type: string
+        createdAt:
+          type: string
+      example:
+        id_lenguage: 1
+        name: Ingles
+        level: B2
+        id_user: 1
+        updatedAt: 2021-08-30T07:27:29.386+0000
+        createdAt: 2021-08-30T07:27:29.386+0000
+    addsocialnewtworkrequest:
+      title: addsocialnewtworkrequest
+      required:
+      - id_user
+      - newtwork
+      type: object
+      properties:
+        newtwork:
+          type: string
+        id_user:
+          type: string
+      example:
+        newtwork: https://github.com/Guillermo-alt
+        id_user: "1"
+    addsocialnewtwork:
+      title: addsocialnewtwork
+      required:
+      - createdAt
+      - id_newtwork
+      - id_user
+      - newtwork
+      - updatedAt
+      type: object
+      properties:
+        id_newtwork:
+          type: integer
+          format: int32
+        newtwork:
+          type: string
+        id_user:
+          type: integer
+          format: int32
+        updatedAt:
+          type: string
+        createdAt:
+          type: string
+      example:
+        id_newtwork: 1
+        newtwork: https://github.com/Guillermo-alt
+        id_user: 1
+        updatedAt: 2021-08-30T07:27:50.389+0000
+        createdAt: 2021-08-30T07:27:50.389+0000
+    addhobbiesrequest:
+      title: addhobbiesrequest
+      required:
+      - description
+      - id_user
+      - name
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        id_user:
+          type: string
+      example:
+        name: play guitar
+        description: play covers, rock an roll genre
+        id_user: "1"
+    addhobbies:
+      title: addhobbies
+      required:
+      - createdAt
+      - description
+      - id_hobbie
+      - id_user
+      - name
+      - updatedAt
+      type: object
+      properties:
+        id_hobbie:
+          type: integer
+          format: int32
+        name:
+          type: string
+        description:
+          type: string
+        id_user:
+          type: integer
+          format: int32
+        updatedAt:
+          type: string
+        createdAt:
+          type: string
+      example:
+        id_hobbie: 1
+        name: play guitar
+        description: play covers, rock an roll genre
+        id_user: 1
+        updatedAt: 2021-08-30T07:28:03.657+0000
+        createdAt: 2021-08-30T07:28:03.657+0000
+    addfriendsrequest:
+      title: addfriendsrequest
+      required:
+      - id_user
+      - id_user_friend
+      type: object
+      properties:
+        id_user_friend:
+          type: string
+        id_user:
+          type: string
+      example:
+        id_user_friend: "65"
+        id_user: "1"
+    getuserforid:
+      title: getuserforid
+      required:
+      - About_me
+      - active
+      - address
+      - cover_page
+      - createdAt
+      - date_of_birth
+      - email
+      - friendships
+      - hobbies
+      - id_user
+      - languages
+      - last_names
+      - names
+      - password
+      - phone
+      - pictures
+      - profile_photo
+      - role
+      - skills
+      - socialNetworks
+      - studies
+      - updatedAt
+      - userName
+      type: object
+      properties:
+        id_user:
+          type: integer
+          format: int32
+        userName:
+          type: string
+        email:
+          type: string
+        names:
+          type: string
+        last_names:
+          type: string
+        password:
+          type: string
+        profile_photo:
+          type: string
+        cover_page:
+          type: string
+        date_of_birth:
+          type: string
+        About_me:
+          type: string
+        address:
+          type: string
+        phone:
+          type: string
+        active:
+          type: integer
+          format: int32
+        role:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        hobbies:
+          type: array
+          items:
+            $ref: '#/components/schemas/Hobby'
+        skills:
+          type: array
+          items:
+            $ref: '#/components/schemas/Skill'
+        studies:
+          type: array
+          items:
+            $ref: '#/components/schemas/Study'
+        languages:
+          type: array
+          items:
+            $ref: '#/components/schemas/Language'
+        socialNetworks:
+          type: array
+          items:
+            $ref: '#/components/schemas/SocialNetwork'
+        pictures:
+          type: array
+          items:
+            type: string
+        friendships:
+          type: array
+          items:
+            type: string
+      example:
+        id_user: 1
+        userName: Guiller
+        email: guiller@hotmail.com
+        names: Guillermo
+        last_names: Ortega Vargas
+        password: pass
+        profile_photo: default/defaulProfile.png
+        cover_page: default/defaultCover.png
+        date_of_birth: 1994/05/28
+        About_me: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet sapiente repellat vero libero dolor ex nam, '
+        address: Fresnos 2 Las cruces CDMX México
+        phone: "5558109026"
+        active: 1
+        role: user
+        createdAt: 2021-08-30T07:21:41.949+0000
+        updatedAt: 2021-08-30T07:23:40.892+0000
+        hobbies:
+        - id_hobbie: 1
+          name: play guitar
+          description: play covers, rock an roll genre
+          createdAt: 2021-08-30T07:28:03.657+0000
+          updatedAt: 2021-08-30T07:28:03.657+0000
+          id_user: 1
+        skills:
+        - id_skill: 1
+          name: Sql server
+          score: 10
+          totalUserScore: 0
+          createdAt: 2021-08-30T07:26:06.059+0000
+          updatedAt: 2021-08-30T07:26:06.059+0000
+          id_user: 1
+        studies:
+        - id_studies: 1
+          institution: Universidad Autónoma Metropolitana Cuajimalpa
+          period: 2017-2021
+          createdAt: 2021-08-30T07:27:12.638+0000
+          updatedAt: 2021-08-30T07:27:12.638+0000
+          id_user: 1
+        languages:
+        - id_lenguage: 1
+          name: Ingles
+          level: B2
+          createdAt: 2021-08-30T07:27:29.386+0000
+          updatedAt: 2021-08-30T07:27:29.386+0000
+          id_user: 1
+        socialNetworks:
+        - id_newtwork: 1
+          newtwork: https://github.com/Guillermo-alt
+          createdAt: 2021-08-30T07:27:50.389+0000
+          updatedAt: 2021-08-30T07:27:50.389+0000
+          id_user: 1
+        pictures: []
+        friendships: []
+    Hobby:
+      title: Hobby
+      required:
+      - createdAt
+      - description
+      - id_hobbie
+      - id_user
+      - name
+      - updatedAt
+      type: object
+      properties:
+        id_hobbie:
+          type: integer
+          format: int32
+        name:
+          type: string
+        description:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        id_user:
+          type: integer
+          format: int32
+      example:
+        id_hobbie: 1
+        name: play guitar
+        description: play covers, rock an roll genre
+        createdAt: 2021-08-30T07:28:03.657+0000
+        updatedAt: 2021-08-30T07:28:03.657+0000
+        id_user: 1
+    Skill:
+      title: Skill
+      required:
+      - createdAt
+      - id_skill
+      - id_user
+      - name
+      - score
+      - totalUserScore
+      - updatedAt
+      type: object
+      properties:
+        id_skill:
+          type: integer
+          format: int32
+        name:
+          type: string
+        score:
+          type: integer
+          format: int32
+        totalUserScore:
+          type: integer
+          format: int32
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        id_user:
+          type: integer
+          format: int32
+      example:
+        id_skill: 1
+        name: Sql server
+        score: 10
+        totalUserScore: 0
+        createdAt: 2021-08-30T07:26:06.059+0000
+        updatedAt: 2021-08-30T07:26:06.059+0000
+        id_user: 1
+    Study:
+      title: Study
+      required:
+      - createdAt
+      - id_studies
+      - id_user
+      - institution
+      - period
+      - updatedAt
+      type: object
+      properties:
+        id_studies:
+          type: integer
+          format: int32
+        institution:
+          type: string
+        period:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        id_user:
+          type: integer
+          format: int32
+      example:
+        id_studies: 1
+        institution: Universidad Autónoma Metropolitana Cuajimalpa
+        period: 2017-2021
+        createdAt: 2021-08-30T07:27:12.638+0000
+        updatedAt: 2021-08-30T07:27:12.638+0000
+        id_user: 1
+    Language:
+      title: Language
+      required:
+      - createdAt
+      - id_lenguage
+      - id_user
+      - level
+      - name
+      - updatedAt
+      type: object
+      properties:
+        id_lenguage:
+          type: integer
+          format: int32
+        name:
+          type: string
+        level:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        id_user:
+          type: integer
+          format: int32
+      example:
+        id_lenguage: 1
+        name: Ingles
+        level: B2
+        createdAt: 2021-08-30T07:27:29.386+0000
+        updatedAt: 2021-08-30T07:27:29.386+0000
+        id_user: 1
+    SocialNetwork:
+      title: SocialNetwork
+      required:
+      - createdAt
+      - id_newtwork
+      - id_user
+      - newtwork
+      - updatedAt
+      type: object
+      properties:
+        id_newtwork:
+          type: integer
+          format: int32
+        newtwork:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+        id_user:
+          type: integer
+          format: int32
+      example:
+        id_newtwork: 1
+        newtwork: https://github.com/Guillermo-alt
+        createdAt: 2021-08-30T07:27:50.389+0000
+        updatedAt: 2021-08-30T07:27:50.389+0000
+        id_user: 1
+    addscoreskillrequest:
+      title: addscoreskillrequest
+      required:
+      - id_skill
+      - score
+      type: object
+      properties:
+        id_skill:
+          type: string
+        score:
+          type: string
+      example:
+        id_skill: "1"
+        score: "20"
+    addscoreskill:
+      title: addscoreskill
+      required:
+      - id_skill
+      - score
+      type: object
+      properties:
+        score:
+          type: string
+        id_skill:
+          type: string
+      example:
+        score: "20"
+        id_skill: "1"
+  securitySchemes:
+    httpBearer:
+      type: http
+      scheme: bearer
