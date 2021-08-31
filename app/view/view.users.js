@@ -75,7 +75,7 @@ app.post('/user/pass', middlewares.validateToken,middlewares.changePassInfor,/*m
  });   
 
  //add Skill
-app.post('/user/skills',middlewares.validateToken , middlewares.validateSkill,/*middlewares.corsOption,*/async (req, res) =>{
+app.post('/user/skills',middlewares.validateToken , /*middlewares.validateSkill,/*middlewares.corsOption,*/async (req, res) =>{
     try {
         let user = await controlUsers.addSkill(req.body);
         res.status(200).json(user);

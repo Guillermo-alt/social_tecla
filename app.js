@@ -27,7 +27,7 @@ app.use(bodyParser.json());
 
 app.use(cors());
 app.use(express.json());
-app.use(middlewares.limiter);
+//app.use(middlewares.limiter);
 
 app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');

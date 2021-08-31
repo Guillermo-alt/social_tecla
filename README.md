@@ -1,5 +1,5 @@
 # Red social -  "Social Tecla"
-Author: Guillermo Ortega
+Author: Guillermo Ortega Vargas
 
 # Usage
 * Clone Repo ``
@@ -7,23 +7,21 @@ Author: Guillermo Ortega
 # Setup MS Sql server
 * setup username and password
 * create an empty database e.g.
-``` budget_system ``` or execute `test.sql in management database to create database`
+``` social_tecla ``` or execute `test.sql in management database to create database`
 * save these to a .env file, as next described
 
-# Set up your .env file with environmental variables
-*  setup ``` HOST ```, ```PORT```, ```DB_USER```, ```DB_PASS```, ``` DB_NAME ```, ``` DIALECT ```, ``` SECRET_KEY ```, ``` WHITE_LIST ``` environmental variables
-* example of .env file:
 
+* example of .env file:
 ```
 HOST= 'localhost'
 PORT = 3000
 
 DB_USER = 'user'
 DB_PASS = 'pass'
-DB_NAME = 'budget_system'
+DB_NAME = 'social_tecla'
 DIALECT = 'mssql'
 
-SECRET_KEY = 'MyRandomSecretKey587541*'
+SECRET_KEY = 'MySecretKey.'
 
 WHITE_LIST = ['http://127.0.0.1:8080', 'http://127.0.0.1:3000']
 ```
